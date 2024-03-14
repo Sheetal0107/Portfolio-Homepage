@@ -15,825 +15,472 @@
         rel="stylesheet">
     <style>
         * {
-    margin: 0px;
-    top: 0px;
-}
-::-webkit-scrollbar{
-    width: 0;
-}
-/*for the bg color and text colour*/
-body {
-    background-color: rgba(205, 21, 0, 0.21);
-    color: black;
-    font-family: 'Roboto Slab', serif;
-}
-.navbar input[type="checkbox"],
-.navbar .hamburger-lines{
-display: none;
-}
+            margin: 0px;
+            top: 0px;
+        }
 
-.navbar{
-box-shadow: 0px 5px 10px 0px #aaa;
-position: fixed;
-width: 100%;
-background-color: #A6607C;
-color: #000;
-opacity: 0.85;
-z-index: 100;
-}
+        /*for the bg color and text colour*/
+        body {
+            background-color: rgba(205, 21, 0, 0.21);
+            color: black;
+            font-family: 'Roboto Slab', serif;
+        }
 
-.navbar-container{
-display: flex;
-justify-content: space-between;
-height: 64px;
-align-items: center;
-margin: 0 11px;
-}
+        nav {
+            background-color: #A6607C;
+            color: #fff;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        }
 
-.menu-items{
-order: 2;
-display: flex;
-}
-.logo{
-order: 1;
-font-size: 1.3rem;
-color: white;
-}
+        nav ul {
+            width: 95%;
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
 
-.menu-items li{
-list-style: none;
-margin-left: 1.5rem;
-font-size: 1.3rem;
-}
+        nav li {
+            height: 50px;
+        }
 
-.navbar a{
-color: #000000;
-text-decoration: none;
-font-weight: 500;
-transition: color 0.3s ease-in-out;
-}
+        nav li h2{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        nav a {
+            height: 100%;
+            padding: 0 15px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: #000000;
+        }
 
-.navbar a:hover{
-color: #117964;
-}
+        nav a:hover {
+            color: #fff;
+        }
 
-@media (max-width: 768px){
-.navbar{
-opacity: 0.95;
-}
+        nav li:first-child {
+            margin-right: auto;
+        }
 
-.navbar-container input[type="checkbox"],
-.navbar-container .hamburger-lines{
-display: block;
-}
-
-.navbar-container{
-display: block;
-position: relative;
-height: 64px;
-}
-
-.navbar-container input[type="checkbox"]{
-position: absolute;
-display: block;
-height: 32px;
-width: 30px;
-top: 20px;
-left: 20px;
-z-index: 5;
-opacity: 0;
-cursor: pointer;
-}
-
-.navbar-container .hamburger-lines{
-display: block;
-height: 28px;
-width: 35px;
-position: absolute;
-top: 20px;
-left: 20px;
-z-index: 2;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-}
-
-.navbar-container .hamburger-lines .line{
-display: block;
-height: 4px;
-width: 100%;
-border-radius: 10px;
-background: #333;
-}
-
-.navbar-container .hamburger-lines .line1{
-transform-origin: 0% 0%;
-transition: transform 0.3s ease-in-out;
-}
-
-.navbar-container .hamburger-lines .line2{
-transition: transform 0.2s ease-in-out;
-}
-
-.navbar-container .hamburger-lines .line3{
-transform-origin: 0% 100%;
-transition: transform 0.3s ease-in-out;
-}
-
-.navbar .menu-items{
-padding-top: 100px;
-background: #fff;
-height: 100vh;
-max-width: 300px;
-transform: translate(-150%);
-display: flex;
-flex-direction: column;
-margin-left: -40px;
-padding-left: 40px;
-transition: transform 0.5s ease-in-out;
-box-shadow:  5px 0px 10px 0px #aaa;
-overflow: scroll;
-}
-
-.navbar .menu-items li{
-margin-bottom: 1.8rem;
-font-size: 1.1rem;
-font-weight: 500;
-}
-
-.logo{
-position: absolute;
-top: 3px;
-right: 15px;
-font-size: 2.5rem;
-}
-
-.navbar-container input[type="checkbox"]:checked ~ .menu-items{
-transform: translateX(0);
-}
-
-.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
-transform: rotate(45deg);
-}
-
-.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
-transform: scaleY(0);
-}
-
-.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
-transform: rotate(-45deg);
-}
-
-}
-
-@media (max-width: 500px){
-.navbar-container input[type="checkbox"]:checked ~ .logo{
-display: none;
-}
-.logo{
-font-size: 1.8rem !important;
-top:12px;
-}
-}
-.mainArea{
-    height: auto;
-    width: 100vw;
-    position: relative;
-    top: 5rem;
-}
-
-footer {
-    bottom: 0;
-}
-
-footer {
-    bottom: 0;
-}
-
-.footer {
-    background: #A6607C;
-    display: flex;
-    justify-content: center;
-    /* box-sizing: border-box; */
-    width: 100vw;
-    flex-wrap: wrap;
-    /* padding: 50px 70px 80px 80px; */
-}
-
-.footer .footer-left,
-.footer .footer-center,
-.footer .footer-right {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.footer .footer-left {
-    width: 35%;
-}
-
-.footer .footer-left h3 {
-    font-size: 20px;
-}
-
-.footer .footer-copyright {
-    color: #47263e;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-    padding-top: 10%;
-    text-align: center;
-}
-
-.footer .footer-center {
-    width: 35%;
-}
-
-.footer .footer-center i {
-    background-color: #47263e;
-    color: #090808;
-    font-size: 25px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 42px;
-    margin: 10px 15px;
-    vertical-align: middle;
-}
-
-.footer .footer-center i.fa-envelope {
-    font-size: 17px;
-    line-height: 38px;
-}
-
-.footer .footer-center p {
-    display: inline-block;
-    color: #000000;
-    vertical-align: middle;
-    margin: 0px;
-}
-
-.footer .footer-center p a {
-    color: #000000;
-    text-decoration: none;
-}
-
-.footer .footer-center p a:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.footer .footer-media {
-    margin-top: 25px;
-}
-
-.footer .footer-media a {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    background-color: #000000;
-    border-radius: 50%;
-    font-size: 20px;
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    margin-right: 3px;
-    margin-bottom: 5px;
-}
-
-.footer .footer-media a:hover {
-    background-color: #fff;
-    color: #000000;
-}
-
-
-.footer2 {
-    background: #A6607C;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    width: 100%;
-    text-align: center;
-}
-
-@media(max-width: 800px) {
-    .hideOnMobile{
-        display: none;
-    }
-    .menu-button{
-        display: block;
-    }
-    footer {
-        position: static;
-    }
-}
-
-@media (max-width: 880px) {
-
-    .footer .footer-left,
-    .footer .footer-center,
-    .footer .footer-right {
-        display: block;
-        width: 100%;
-        margin-bottom: 40px;
-        text-align: left;
-    }
-
-    .footer .footer-center i {
-        margin-left: 0px;
-    }
-}
-
-
-.firstSection{
-    height: auto;
-    width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 3rem;
-
-
-}
-.leftSection .buttons {
-    padding: 15px 0;
-}
-
-
-  
-.button-33 {
-  background-color: #b4ed91;
-  border-radius: 100px;
-  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
-  color: green;
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  margin: 0 2px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-33:hover {
-  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
-}
-
-
-.leftSection .button-33 a {
-    text-decoration: none;
-    color: #050505;
-}
-
-
-.myImage{
-height:300px;
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
             width: 250px;
-            /* border-radius: 57px; */
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
+            z-index: 999;
+            background-color: rgba(116, 45, 77, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: -10px 0 10px rgba(255, 255, 255, 0.1);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
 
-.leftSection {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
+        .sidebar li {
+            width: 100%;
+        }
 
-    font-size: 25px;
-}
+        .sidebar a {
+            width: 100%;
+        }
 
-/*TIMELINE STARTS*/
-.timeline-wrapper,
-.timelin-main,
-.timelin-main li {
-	position: relative;
-	margin:0 3rem;
-}
+        main hr {
+            background-color: #83677B;
+            height: 1.6px;
+        }
 
-.timelin-main {
-	padding: 60px 0;
-}
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 450px;
+        }
 
-.timeline-wrapper:before,
-.timeline-wrapper:after {
-	z-index: 4;
-}
+        .firstSection>div {
+            width: 30%;
+        }
 
-/*main top circle*/
-.timeline-wrapper:before {
-	top: 0;
-}
+        .leftSection {
+            margin-left: 180px;
+            font-size: 25px;
+        }
 
-/*main bottom circle*/
-.timeline-wrapper:after {
-	bottom: 0;
-}
+        .leftSection .buttons {
+            padding: 15px 0;
+        }
 
-/*main vertical line*/
-.timelin-main:before {
-	top: 0;
-	bottom: 0;
-	width: 5px;
-	z-index: 3;
-}
+        .leftSection .btn {
+            padding: 15px;
+            background-color: #A6607C;
+            color: rgb(255, 255, 255);
+            border: 2px solid white;
+            border-radius: 22px;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-/*news post - left right left right*/
-.timelin-main li > div {
-	width: 35%;
-	padding: 15px 30px;
-	
-	
-    backdrop-filter: blur(6px) saturate(180%);
-    -webkit-backdrop-filter: blur(6px) saturate(180%);
-    background-color: rgba(12, 12, 12, 0.241);
-    border-radius: 12px;
-    border: 1px solid rgba(13, 13, 14, 0.3);
-	position: relative;
-	z-index: 9;
-	box-shadow: 0px 0px 3px 0px rgb(46, 152, 228);
-	color: white;
-}
+        .leftSection .btn a {
+            text-decoration: none;
+            color: #fcfcfc;
+        }
 
-/*left*/
-.timelin-main li:nth-child(odd) > div {
-	float: left;
-}
+        .leftSection .btn a:hover {
+            color: rgb(14, 15, 15);
+            font-size: 1rem;
+        }
 
-/*right*/
-.timelin-main li:nth-child(even) > div {
-	float: right;
-}
+        .rightSection img {
+            margin-left: 50px;
+            border: 1cap;
+            width: 200px;
+            height: 350px;
+        }
 
-.timelin-main li:nth-child(even) {
-	margin-top: 100px;
-}
+        .white {
+            color: #A6607C;
+        }
 
-/*clearing float*/
-.timelin-main li:after {
-	content: '';
-	display: block;
-	clear: both;
-}
+        .blue {
+            color: #84465b;
+            font-size: 18px;
+        }
 
-/*left news line*/
-.timelin-main li:nth-child(odd) > div:after {
-	left: 100%;
-	-webkit-transform-origin: left center;
-			transform-origin: left center;
-}
+        #element {
+            color: #A6607C;
+        }
 
-/*right news line*/
-.timelin-main li:nth-child(even) > div:after {
-	right: 100%;
-	-webkit-transform-origin: right center;
-			transform-origin: right center;
-}
 
-/*horizontal line of news elements - depending on the li div width*/
-.timelin-main li > div:after {
-	width: 44.5%;
-	height: 5px;
-}
+        .secondSection {
+            text-align: left;
+            margin-left: 150px;
+            height: 480px;
+        }
 
-/*color of lines and circles - combined */
-.timeline-wrapper:before,
-.timeline-wrapper:after,
-.timelin-main:before,
-.timelin-main li:before,
-.timelin-main li > div:after,
-.timelin-main li > div:before  {
-	content: '';
-	position: absolute;
-	background-image: -webkit-repeating-linear-gradient( 
-		315deg, rgb(20, 106, 195), 
-		rgba(12, 28, 228, 0.97) 25%, 
-		rgba(13, 234, 163, 0.98) 25%, 
-		rgba(39, 86, 193, 0.38) 50% );
-	background-image: repeating-linear-gradient( 
-		135deg, rgb(20, 106, 195), 
-		rgba(12, 28, 228, 0.97) 25%, 
-		rgba(13, 234, 163, 0.98) 25%, 
-		rgba(39, 86, 193, 0.38) 50% );
-	background-size: 12px 12px;
-}
+        .secondSection h1 {
+            font-size: 20px;
+        }
 
-/*circle style*/
-.timeline-wrapper:before,
-.timeline-wrapper:after,
-.timelin-main li:before,
-.timelin-main li > div:before  {
-	width: 12px;
-	height: 12px;
-	border-radius: 50%;
-	border: 2px solid #fff;
-	box-shadow: 0px 0px 0px 2px rgba(0, 144, 247, 1);
-	background: rgba(0, 144, 247, 1);
-}
+        .secondSection .box {
+            background-color: rgb(10, 10, 9);
+            height: 2px;
+            display: flex;
+            width: 800px;
+        }
 
-/*make sure the main line and main circles remain horizontally centered*/
-.timeline-wrapper:before,
-.timeline-wrapper:after,
-.timelin-main:before {
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-			transform: translateX(-50%);
-}
+        .secondSection .vertical {
+            height: 60px;
+            width: 1px;
+            background-color: rgb(0, 0, 0);
+            margin: 0px 120px;
+        }
 
-/*make sure the other lines and other circles remain vertically centered*/
-.timelin-main li > div:after,
-.timelin-main li > div:before  {
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-			transform: translateY(-50%);
-}
+        .vertical-title {
+            position: relative;
+            top: 60px;
+            width: 180px;
+            margin-left: -50px;
+            font-size: 15px;
+            font-weight: bold;
+        }
 
-/*circles on the main line*/
-.timelin-main li:before {
-	top: 50%;
-	left: 50%;
-	z-index: 10;
-	-webkit-transform: translate(-50%, -50%);
-			transform: translate(-50%, -50%);
-/* 	background-color: red; // check which one */
-}
+        .vertical-desc {
+            position: relative;
+            top: 60px;
+            color: rgb(186, 87, 128);
+            width: 200px;
+            font-size: 13px;
+            left: -50px;
+        }
 
-.timelin-main li:nth-child(odd):before {
-	margin-top: 23px;
-}
+        .secondSection .box2 {
+            background-color: rgb(10, 10, 9);
+            width: 800px;
+            height: 2px;
+            margin-top: 170px;
+            display: flex;
+        }
 
-.timelin-main li:nth-child(even):before {
-	margin-top: -24px;
-}
+        .secondSection .vertical2 {
+            height: 60px;
+            width: 1px;
+            background-color: rgb(0, 0, 0);
+            margin: auto;
+        }
 
-/*rotate the horizontal line*/
-.timelin-main li > div:after {
-	-webkit-transform: translateY(-50%) rotate(10deg);
-			transform: translateY(-50%) rotate(10deg);
-}
+        .vertical-title2 {
+            position: relative;
+            top: 60px;
+            width: 200px;
+            left: -50px;
+            font-size: 15px;
+            font-weight: bold;
+        }
 
-/*circle new element*/
-.timelin-main li > div:before {
-	right: 0;
-	z-index: 3;
-}
+        .vertical-desc2 {
+            position: relative;
+            top: 60px;
+            color: rgb(186, 87, 128);
+            width: 230px;
+            font-size: 13px;
+            left: -50px;
+        }
 
-/*left news circle*/
-.timelin-main li:nth-child(odd) > div:before {
-	right: -7px;
-}
+        footer {
+            bottom: 0;
+        }
 
-/*right news circl*/
-.timelin-main li:nth-child(even) > div:before {
-	left: -7px;
-}
+        .footer {
+            background: #A6607C;
+            display: flex;
+            justify-content: baseline;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 50px 70px 80px 80px;
+        }
 
-@media screen and (max-width: 767px) {
+        .footer .footer-left,
+        .footer .footer-center,
+        .footer .footer-right {
+            display: inline-block;
+            vertical-align: top;
+        }
 
-	.timelin-main {
-		padding: 75px 0;
-	}
-	.timelin-main li > div {
-		width: 100%;
-		padding: 40px 10px;
-		text-align: center;
-		box-shadow: none;
-	}
-	.timelin-main li:before {
-		top: 0;
-		-webkit-transform: translate(-50%, 0);
-				transform: translate(-50%, 0);
-	}
+        .footer .footer-left {
+            width: 35%;
+        }
 
-	.timelin-main li:nth-child(odd):before,
-	.timelin-main li:nth-child(even):before {
-		margin-top: -7px;
-	}
+        .footer .footer-left h3 {
+            font-size: 20px;
+        }
 
-	.timelin-main li:nth-child(odd) > div:before,
-	.timelin-main li:nth-child(even) > div:before {
-		bottom: -8px;
-		left: 50%;
-		top: auto;
-		-webkit-transform: translateX(-50%);
-				transform: translateX(-50%);
-		
-	}
-	.timelin-main li:nth-child(even) > div:before {
+        .footer .footer-copyright {
+            color: #47263e;
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+            padding-top: 10%;
+            text-align: center;
+        }
 
-	}
-	.timelin-main li > div:after {
-		display: none;
-	}
+        .footer .footer-center {
+            width: 35%;
+        }
 
-	.timelin-main li {
-		margin: 65px 0;
-	}
-	.timelin-main li:nth-child(even) {
-		margin-top: 0;
-	}
-	.timelin-main li:first-child {
-		margin-top: 0;
-	}
-	.timelin-main li:last-child {
-		margin-bottom: 0;
-	}
-}
+        .footer .footer-center i {
+            background-color: #47263e;
+            color: #090808;
+            font-size: 25px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 42px;
+            margin: 10px 15px;
+            vertical-align: middle;
+        }
 
-/* Animation */
-.timeline-wrapper:before,
-.timeline-wrapper:after,
-.timelin-main li:before,
-.timelin-main li > div:before {
-	-webkit-animation: scale 2s cubic-bezier(1, -0.25, 0.05, 1.67) infinite;
-			animation: scale 2s cubic-bezier(1, -0.25, 0.05, 1.67) infinite;
-}
+        .footer .footer-center i.fa-envelope {
+            font-size: 17px;
+            line-height: 38px;
+        }
 
-@-webkit-keyframes scale {
+        .footer .footer-center p {
+            display: inline-block;
+            color: #000000;
+            vertical-align: middle;
+            margin: 0px;
+        }
 
-	0% {
-		box-shadow: 0px 0px 0px 2px rgba(0, 144, 247, 1);
-	}
+        .footer .footer-center p a {
+            color: #000000;
+            text-decoration: none;
+        }
 
-	25% {
-		box-shadow: 0px 0px 0px 3px rgba(0, 144, 247, .7);
-	}
-	50% {
-		box-shadow: 0px 0px 0px 2px rgba(0, 144, 247, .5);
-	}
+        .footer .footer-center p a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
 
-	75% {
-		box-shadow: 0px 0px 0px 3px rgba(0, 144, 247, .3);
-	}
+        .footer .footer-media {
+            margin-top: 25px;
+        }
 
-	100% {
-		box-shadow: 0px 0px 0px 2px rgba(0, 144, 247, 1);
-	}
+        .footer .footer-media a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background-color: #000000;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            margin-right: 3px;
+            margin-bottom: 5px;
+        }
 
-}
+        .footer .footer-media a:hover {
+            background-color: #fff;
+            color: #000000;
+        }
 
-@keyframes scale {
 
-	0% {
-		box-shadow: 0px 0px 0px 2px rgba(0, 144, 247, 1);
-	}
+        .footer2 {
+            background: #A6607C;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            width: 100%;
+            text-align: center;
+        }
 
-	25% {
-		box-shadow: 0px 0px 0px 3px rgba(0, 144, 247, .7);
-	}
-	50% {
-		box-shadow: 0px 0px 0px 2px rgba(0, 144, 247, .5);
-	}
+        @media(max-width: 800px) {
+            .hideOnMobile{
+                display: none;
+            }
+            .menu-button{
+                display: block;
+            }
+            footer {
+                position: static;
+            }
+        }
 
-	75% {
-		box-shadow: 0px 0px 0px 3px rgba(0, 144, 247, .3);
-	}
+        @media (max-width: 880px) {
 
-	100% {
-		box-shadow: 0px 0px 0px 2px rgba(0, 144, 247, 1);
-	}
+            .footer .footer-left,
+            .footer .footer-center,
+            .footer .footer-right {
+                display: block;
+                width: 100%;
+                margin-bottom: 40px;
+                text-align: left;
+            }
 
-}
+            .footer .footer-center i {
+                margin-left: 0px;
+            }
+        }
+
+        @media(max-width:400px){
+            .sidebar{
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <header>
-    <nav class="navbar">
-        <div class="navbar-container container">
-            <input type="checkbox" name="" id="">
-          <div class="hamburger-lines">
-            <span class="line line1"></span>
-            <span class="line line2"></span>
-            <span class="line line3"></span>
-          </div>
-          <ul class="menu-items">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="https://sheetal0107.github.io/certifications/">Certifications</a></li>
-            <li><a href="https://sheetal0107.github.io/Portfolio-Projects/">Projects</a></li>
-            <li><a href="https://sheetal0107.github.io/Portfolio-Gallery/">Gallery</a></li>
-            <li><a href="https://sheetal0107.github.io/Portfolio-Contact/">Contact Me</a></li>
-          </ul>
-          <h1 class="logo">Sheetal's Portfolio</h1>
-        </div>
-      </nav>
-    </header>
-
-    <div class="mainArea">
-      <section class="firstSection">
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()>
+                <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </li>
+            <li><a href="homepage.html"target="_blank">Home</a></li>
+            <li><a href="about.html"target="_blank">About</a></li>
+            <li><a href="index.html"target="_blank">Certifications</a></li>
+            <li><a href="Project.html"target="_blank">Projects</a></li>
+            <li><a href="gallery.html"target="_blank">Gallery</a></li>
+            <li><a href="contact.html"target="_blank">Contact Me</a></li>
+            
+        </ul>
+        <ul>
+            <li>
+                <h2>Sheetal's Portfolio</h2>
+            </li>
+            <li class="hideOnMobile"><a href="homepage.html" target="_blank">Home</a></li>
+            <li class="hideOnMobile"><a href="about.html"target="_blank">About</a></li>
+            <li class="hideOnMobile"><a href="index.html"target="_blank">Certifications</a></li>
+            <li class="hideOnMobile"><a href="Project.html"target="_blank">Projects</a></li>
+            <li class="hideOnMobile"><a href="gallery.html"target="_blank">Gallery</a></li>
+            <li class="hideOnMobile"><a href="contact.html"target="_blank">Contact Me</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="firstSection">
         <div class="leftSection">
-            Hi, My name is <span class="white" style="color: #A6607C; font-size: 40px;">Sheetal Bardia</span>.
+            Hi, My name is <span class="white">Sheetal Bardia</span>.
             <div>and I am </div>
-            <span id="element" style="color: #A6607C;;"></span>
+            <span id="element"></span>
             <div class="buttons">
-                <button class="button-33"><a href="Sheetal Bardia CV.pdf" target="_blank">Download Resume</a></button>
-                <button class="button-33"><a href=https://github.com/Sheetal0107 target="_blank">Visit GitHub</a></button>
+                <button class="btn"><a href="Sheetal Bardia CV.pdf" target="_blank">Download Resume</a></button>
+                <button class="btn"><a href=https://github.com/Sheetal0107 target="_blank">Visit GitHub</a></button>
             </div>
         </div>
         <div class="rightSection">
-            <img src="./sheetal.png" alt=""  class =" myImage">
+            <img src="sheetal.png" alt="">
         </div>
-      </section>
-      <hr />
-      
-<p style="justify-content: center;display: flex; font-size: 4rem;padding-bottom: 3px;">My Life</p>
-<div class="timeline-wrapper">
-    <ul class="timelin-main" style="list-style: none;">
-        <li>
-            <div>
-                <h1>Nursery(2005)</h1>
-                <h5>H.M. Education Center,<br/>Hindmotor</h5>
+    </section>
+    <hr>
+    <section class="secondSection">
+        <span class="blue">Details</span>
+        <h1>My Life :)</h1>
+        <div class="box">
+            <div class="vertical">
+                <div class="vertical-title">Nursery <span>(2005)</span></div>
+                <div class="vertical-desc">H.M.Education Center, Hindmotor.</div>
             </div>
-        </li>
-        <li>
-            <div>
-                <h1>Secondary(2018)</h1>
-                <h5>H.M.Education Center, <br/>Hindmotor.<br/> I passed X by securing 81% in subject: General.</h5>
+            <div class="vertical">
+                <div class="vertical-title">Secondary <span>(2018)</span></div>
+                <div class="vertical-desc">H.M.Education Center, Hindmotor. I passed X by securing 81% in subject: General.</div>
             </div>
-        </li>
-        <li>
-            <div>
-                <h1>Higher Secondary (2020)</h1>
-               <h5>
-                Sudhir Memorial Institute,<br/>Liluah. </h5><br/>I have passed XII in 2020 by scoring 66.6% in subject: Science.
-               </h5>
+            <div class="vertical">
+                <div class="vertical-title">Higher Secondary <span>(2020)</span></div>
+                <div class="vertical-desc">Sudhir Memorial Institute,Liluah. I have passed XII in 2020 by scoring 66.6% in subject:
+                    Science.</div>
             </div>
-        </li>
-        <li>
-            <div>
-                <h1>College Life (2020-2024)</h1>
-               <h5>University of Engineering & Management, Kolkata.<br/> I have achieved overall 9.25 CGPA till 6th sem without any active backlog.</h5>
+        </div>
+        <div class="box2">
+            <div class="vertical2">
+                <div class="vertical-title2">College Life <span>(2020-2024)</span></div>
+                <div class="vertical-desc2">University of Engineering & Management, Kolkata. I have achieved overall 9.25 CGPA till 6th sem without any active backlog.</div>
             </div>
-        </li>
-      
-    </ul>
-</div>
-
-      <footer>
-        <div class="footer">
-          <div class="footer-left">
+            
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer">
+        <div class="footer-left">
             <h3>Welcome Living Soul :)</h3>
-            <p>
-              Hi, Welcome to my portfolio, I hope you scrolled down as you liked
-              my portfolio. I am not a robot typing these things, I am a human
-              just like you all. LOL! I am Sheetal Bardia, soon to be a CS
-              engineer and I am here as a part of the bridge between technology
-              and humans.
-            </p>
-          </div>
-          <div class="footer-center">
+            <p>Hi, Welcome to my portfolio, I hope you scrolled down as you liked my portfolio. I am not a robot typing
+                these things, I am a human just like you all. LOL! I am Sheetal Bardia, soon to be a CS engineer and I
+                am here as a part of the bridge between technology and humans.</p>
+        </div>
+        <div class="footer-center">
             <div>
-              <i class="fa fa-map-marker"></i>
-              <p>Kolkata</p>
+                <i class="fa fa-map-marker"></i>
+                <p> Kolkata</p>
             </div>
             <div>
-              <i class="fa fa-envelope"></i>
-              <p>
-                <a href="mailto:bardiasheetal0107@gmail.com"
-                  >bardiasheetal0107@gmail.com</a
-                >
-              </p>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:bardiasheetal0107@gmail.com">bardiasheetal0107@gmail.com</a></p>
             </div>
-          </div>
-          <div class="footer-right">
+        </div>
+        <div class="footer-right">
             <div class="footer-media">
-              <a href="https://instagram.com/_hoppyhearts_" target="_blank"
-                ><i class="fa fa-instagram"></i
-              ></a>
-              <a href="https://github.com/Sheetal0107" target="_blank"
-                ><i class="fa fa-github"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/sheetal-bardia-13086a280"
-                target="_blank"
-                ><i class="fa fa-linkedin"></i
-              ></a>
-              <a
-                href="https://www.facebook.com/sheetalbardia0107"
-                target="_blank"
-                ><i class="fa fa-facebook"></i
-              ></a>
-              <a href="https://twitter.com/Sheetal_0107" target="_blank"
-                ><i class="fa fa-twitter"></i
-              ></a>
-              <a href="https://youtube.com/@_pwrettiess__" target="_blank"
-                ><i class="fa fa-youtube"></i
-              ></a>
+                <a href="https://instagram.com/_hoppyhearts_" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="https://github.com/Sheetal0107" target="_blank"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sheetal-bardia-13086a280" target="_blank"><i
+                        class="fa fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/sheetalbardia0107" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/Sheetal_0107" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://youtube.com/@_pwrettiess__" target="_blank"><i class="fa fa-youtube"></i></a>
             </div>
-          </div>
         </div>
-        <div class="footer2">
-          <p class="footer-copyright">
-            Copyright &#169; https://sheetal0107.github.io/Portfolio-Homepage/ |
-            All Rights Reserved
-          </p>
-        </div>
-      </footer>
     </div>
+    <div class="footer2">
+        <p class="footer-copyright">Copyright &#169; https://sheetal0107.github.io/Portfolio-Homepage/ | All Rights Reserved</p>
+    </div>
+</footer>
 
 <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 <script>
